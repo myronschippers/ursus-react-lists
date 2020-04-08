@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Header from '../Header/Header';
 import './App.css';
+import CreatureList from '../CreatureList/CreatureList';
 
 const list = [1,2,3,4];
 
@@ -57,9 +58,9 @@ class App extends Component {
     // });
 
     // map LOOP
-    const creatureElements = this.state.creatures.map((item, index) => {
-      return <li key={index}>{item.name} is from {item.origin}</li>;
-    });
+    // const creatureElements = this.state.creatures.map((item, index) => {
+    //   return <li key={index}>{item.name} is from {item.origin}</li>;
+    // });
     // const creatureElements = this.state.creatures.map((item) => <li>{item}</li>);
 
     return (
@@ -69,12 +70,17 @@ class App extends Component {
         <div className="container">
           {/* this.state.creatures */}
 
-          <div>
+          {/* new creature form */}
+
+          {/* <div>
             <h2>Creature Elements:</h2>
             <ul>
               {creatureElements}
             </ul>
-          </div>
+          </div> */}
+          <CreatureList
+            kittykat={this.state.creatures}
+          />
 
           <pre>
             {JSON.stringify(this.state.creatures)}
