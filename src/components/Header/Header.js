@@ -8,7 +8,7 @@ class Header extends React.Component {
     return (
       <header>
         <img src={logo} className="logo" alt="react logo" />
-        <h1>React Forms and Lists</h1>
+        <h1>React Lists</h1>
       </header>
     );
   }
