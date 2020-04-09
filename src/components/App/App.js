@@ -4,7 +4,24 @@ import './App.css';
 
 class App extends Component {
   state = {
-    creaturesList: ['Unicorn', 'Sphinx', 'Kappa', 'Dryad']
+    creaturesList: [
+      {
+        name: 'Unicorn',
+        origin: 'Kansas City'
+      },
+      {
+        name: 'Sphinx',
+        origin: 'Egypt'
+      },
+      {
+        name: 'Kappa',
+        origin: 'Japan'
+      },
+      {
+        name: 'Dryad',
+        origin: 'Isles'
+      }
+    ]
   }
 
   render() {
@@ -27,7 +44,7 @@ class App extends Component {
 
     // using map loop
     const creatureElements = this.state.creaturesList.map((item, index) => {
-      return <li key={index}>{item}</li>;
+      return <li key={index}><strong>{item.name}</strong> is from {item.origin}</li>;
     });
     // const creatureElements = this.state.creaturesList.map((item, index) => <li key={index}>{item}</li>);
 
@@ -36,9 +53,11 @@ class App extends Component {
         <Header />
 
         <div className="container">
-          {this.state.creaturesList}
+          {/* this.state.creaturesList */}
 
           <h2>Creature Elements</h2>
+          <p>First Creature: {this.state.creaturesList[0].name}</p>
+          <p>Last Creature: {this.state.creaturesList[this.state.creaturesList.length - 1].name}</p>
           <ul>
             {creatureElements}
           </ul>
